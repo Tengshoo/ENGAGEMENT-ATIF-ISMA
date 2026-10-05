@@ -1291,10 +1291,359 @@ function initSmoothScroll() {
 }
 
 /* ============================================================
+   LANGUAGE (I18N) — ENG & BM
+   ============================================================ */
+const translations = {
+  en: {
+    navHome: "HOME",
+    navStory: "STORY",
+    navDetails: "DETAILS",
+    navProgramme: "PROGRAMME",
+    heroTag: "IT'S HAPPENING",
+    heroPretitle: "THE ENGAGEMENT OF",
+    heroCaption: "Welp... this is actually happening.",
+    heroDate: "26 DECEMBER 2026",
+    countdownLabel: "THE FINAL COUNTDOWN ⏳",
+    cdDays: "DAYS",
+    cdHours: "HRS",
+    cdMins: "MIN",
+    cdSecs: "SEC",
+    heroDetailsBtn: "EVENT DETAILS →",
+    heroStoryBtn: "Our Story ↓",
+    heroScroll: "scroll down",
+    storyHeading: "HOW DID WE GET HERE?",
+    storySub: "A completely unhinged timeline of two people in denial.",
+    storyTag1: "THE FIRST MEET",
+    storyText1: "The universe decided to be sneaky. Neither of us saw it coming. Classic origin story, honestly.",
+    storyTag2: "THE FIRST DATE",
+    storyText2: "Was it a date? Was it hanging out? We both knew. We both pretended we didn't.",
+    storyTag3: "THE \"OH NO, I LIKE YOU\" ERA",
+    storyText3: "Panic. Butterflies. Overthinking. Typing and deleting texts. You know the drill.",
+    storyTag4: "THE OFFICIAL ERA",
+    storyText4: "We stopped pretending. It was official. The group chat went crazy. Rightfully so.",
+    storyTag5: "THE PROPOSAL",
+    storyText5: "He actually did it. She said yes. We both cried. Don't @ us.",
+    storyTag6: "THE \"WE'RE ACTUALLY GETTING ENGAGED\" ERA",
+    storyDate6: "NOW",
+    storyText6: "This is it. The chaos, the love, the stress, the joy. And now you're here for it. Thank you. 💙",
+    coupleHeading: "THE MAIN CHARACTERS",
+    coupleSub: "In case you forgot who this is about.",
+    atifRole: "Professional Overthinker",
+    atifTag1: "🚗 Cars",
+    atifTag2: "⚙️ Engineering",
+    atifTag3: "🍔 Food",
+    atifTag4: "🤔 Overthinking",
+    atifBio: "Always has a plan. Never follows it. Somehow things still work out. Probably because of Isma.",
+    ismaRole: "CEO of Being Right",
+    ismaTag1: "👑 Queen",
+    ismaTag2: "✨ Vibes",
+    ismaTag3: "💅 Always Right",
+    ismaTag4: "🎨 Creative",
+    ismaBio: "Has been right about everything since day one. Atif is slowly accepting this. Growth.",
+    receiptsHeading: "RECEIPTS 📸",
+    receiptsSub: "Proof that we actually have fun together.",
+    caption1: "caught in 4K",
+    caption2: "before the wedding planning stress",
+    caption3: "she said yes 🥹",
+    caption4: "he had no idea what he was doing",
+    caption5: "certified yap session",
+    caption6: "us every weekend honestly",
+    soundtrackBadge: "OUR CEREMONY ANTHEM · ON SPOTIFY",
+    detailsHeading: "THE IMPORTANT STUFF",
+    detailsSub: "Screenshot this. We're serious.",
+    labelDate: "DATE",
+    labelTime: "TIME",
+    labelVenue: "VENUE",
+    labelDresscode: "DRESS CODE",
+    detailDate: "26 December 2026",
+    detailTime: "5:30 PM — 10:00 PM",
+    detailDressCode: "Traditional Outfit",
+    detailSubHint: "Baju Kurung & Baju Melayu",
+    wearHeading: "WHAT DO I WEAR?",
+    wearSub: "Pick ur side wisely:",
+    teamAtif: "TEAM ATIF",
+    colorYellow: "Butter Yellow",
+    hintYellow: "Soft pastel yellow & buttercream",
+    teamIsma: "TEAM ISMA",
+    colorPink: "Dusty Pink",
+    hintPink: "Soft pinks, blush & mauve tones",
+    themeLabel: "Theme:",
+    themeVal: "Traditional Outfit",
+    timelineHeading: "ENGAGEMENT CEREMONY",
+    timelineSub: "Tentative Programme · So you actually know what's happening and when ✨",
+    tl1Time: "5:30 PM",
+    tl1Title: "Arrival of Guests & Isma’s Family Members",
+    tl1Desc: "Find a seat, get settled, and say hi to the family.",
+    tl2Time: "5:45 PM",
+    tl2Title: "Arrival of Atif’s Family",
+    tl2Desc: "The groom's entourage arrives with all the good energy.",
+    tl3Time: "6:00 PM",
+    tl3Title: "Engagement Ceremony Begins",
+    tl3Desc: "Hantaran Procession & Presentation.",
+    tl4Time: "6:05 PM",
+    tl4Title: "Recitation of Doa",
+    tl4Desc: "Seeking blessings for the journey ahead.",
+    tl5Time: "6:10 PM",
+    tl5Title: "Speech & Presentation of Intentions",
+    tl5Desc: "By Atif’s Family Representative.",
+    tl6Time: "6:15 PM",
+    tl6Title: "Response by the Bride’s Family Representative",
+    tl6Desc: "Words of acceptance & mutual joy from Isma's family.",
+    tl7Time: "6:20 PM",
+    tl7Title: "Engagement Ring Ceremony 💍",
+    tl7Desc: "By Atif’s Mother (Upacara Menyarungkan Cincin).",
+    tl8Time: "6:30 PM",
+    tl8Title: "Family & Couple Photography Session 📸",
+    tl8Desc: "Official portraits and family photos on stage.",
+    tl9Time: "6:45 PM",
+    tl9Title: "Dinner 🍽️",
+    tl9Desc: "Feast time! Enjoy the banquet and warm company.",
+    tl10Time: "7:15 PM",
+    tl10Title: "Maghrib Prayer 🕌",
+    tl10Desc: "Prayer break for guests and family.",
+    tl11Time: "7:45 PM",
+    tl11Title: "Casual Photography & Mingling with Guests",
+    tl11Desc: "Catch up, snap selfies, OOTDs, and celebrate together.",
+    tl12Time: "9:30 PM",
+    tl12Title: "Exchange & Presentation of Engagement Gifts 🎁",
+    tl12Desc: "Balas hantaran & gift handover between families.",
+    tl13Time: "10:00 PM",
+    tl13Title: "End of Ceremony ✨",
+    tl13Desc: "Thank you for celebrating with us! Drive safe & text us when you arrive.",
+    dneBtn: "DO NOT CLICK ⚠️",
+    secretTitle: "you found the secret",
+    secretText: "Okay you are genuinely too curious. We respect it though. 💀",
+    secretClose: "okay bye 👋",
+    dneTitle: "We said DO NOT CLICK.",
+    dneP2: "And yet here you are. Iconic behaviour. We appreciate the curiosity though! ✨",
+    dneClose: "Okay fine, take me back 👋",
+    footerMadeWith: "Made with ❤️ & a lot of wedding planning stress.",
+    footerTiny: "Your presence > presents. Always.",
+    footerRights: "All rights reserved (to get engaged).",
+    musicPlay: "PLAY",
+    musicPlaying: "NOW PLAYING"
+  },
+  bm: {
+    navHome: "UTAMA",
+    navStory: "KISAH KAMI",
+    navDetails: "INFO",
+    navProgramme: "ATUR CARA",
+    heroTag: "KITA JADI BERTUNANG",
+    heroPretitle: "MAJLIS PERTUNANGAN",
+    heroCaption: "Dah agak dah... memang jadi betul.",
+    heroDate: "26 DISEMBER 2026",
+    countdownLabel: "KIRAAN DETIK ⏳",
+    cdDays: "HARI",
+    cdHours: "JAM",
+    cdMins: "MINIT",
+    cdSecs: "SAAT",
+    heroDetailsBtn: "BUTIRAN MAJLIS →",
+    heroStoryBtn: "Kisah Kami ↓",
+    heroScroll: "skrol ke bawah",
+    storyHeading: "BAGAIMANA KITA DI SINI?",
+    storySub: "Garis masa perjalanan dua insan yang dulunya saling menafikan.",
+    storyTag1: "PERTEMUAN PERTAMA",
+    storyText1: "Takdir memang suka buat kejutan. Masing-masing tak sangka. Cerita klasik, kan?",
+    storyTag2: "JANJI TEMU PERTAMA",
+    storyText2: "Date ke lepak biasa? Dua-dua tahu. Tapi dua-dua buat-buat tak tahu.",
+    storyTag3: "ZAMAN \"ALAMAK, TERSUKA AWAK\"",
+    storyText3: "Panik. Berdebar. Fikir bukan-bukan. Taip dan padam mesej. Faham-faham je lah.",
+    storyTag4: "ZAMAN RASMI BERSAMA",
+    storyText4: "Kami berhenti pura-pura. Dah rasmi. Group chat terus kecoh!",
+    storyTag5: "LAMARAN",
+    storyText5: "Dia lamar betul-betul. Dia kata ya. Dua-dua mengalir air mata.",
+    storyTag6: "ZAMAN \"KITA BETUL-BETUL BERTUNANG\"",
+    storyDate6: "KINI",
+    storyText6: "Inilah permulaannya. Segala suka, duka, cinta dan tawa. Terima kasih kerana ada bersama kami. 💙",
+    coupleHeading: "WATAK UTAMA",
+    coupleSub: "Sekadar peringatan siapa bintang majlis ni.",
+    atifRole: "Pakar Overthinking",
+    atifTag1: "🚗 Kereta",
+    atifTag2: "⚙️ Kejuruteraan",
+    atifTag3: "🍔 Makanan",
+    atifTag4: "🤔 Overthinking",
+    atifBio: "Sentiasa ada rancangan. Tapi jarang ikut. Entah macam mana semua selesai juga. Mungkin sebab Isma.",
+    ismaRole: "CEO Selalu Betul",
+    ismaTag1: "👑 Ratu",
+    ismaTag2: "✨ Vibes",
+    ismaTag3: "💅 Selalu Betul",
+    ismaTag4: "🎨 Kreatif",
+    ismaBio: "Selalu betul dalam semua perkara dari hari pertama. Atif perlahan-lahan reda menerimanya.",
+    receiptsHeading: "BUKTI KENANGAN 📸",
+    receiptsSub: "Bukti kami memang seronok bila bersama.",
+    caption1: "kantoi 4K",
+    caption2: "sebelum stress rancang majlis",
+    caption3: "dia kata ya 🥹",
+    caption4: "dia tak tahu apa dia buat",
+    caption5: "sesi borak tanpa henti",
+    caption6: "kami setiap hujung minggu",
+    soundtrackBadge: "LAGU TEMA KAMI · DI SPOTIFY",
+    detailsHeading: "INFO PENTING",
+    detailsSub: "Tolong screenshot. Kami serius ni.",
+    labelDate: "TARIKH",
+    labelTime: "MASA",
+    labelVenue: "LOKASI",
+    labelDresscode: "TEMA PAKAIAN",
+    detailDate: "26 Disember 2026",
+    detailTime: "5:30 PTG — 10:00 MLM",
+    detailDressCode: "Pakaian Tradisional",
+    detailSubHint: "Baju Kurung & Baju Melayu",
+    wearHeading: "APA NAK PAKAI?",
+    wearSub: "Pilih team korang elok-elok:",
+    teamAtif: "TEAM ATIF",
+    colorYellow: "Butter Yellow",
+    hintYellow: "Kuning pastel lembut & warna mentega",
+    teamIsma: "TEAM ISMA",
+    colorPink: "Dusty Pink",
+    hintPink: "Ton merah jambu lembut & mauve",
+    themeLabel: "Tema:",
+    themeVal: "Pakaian Tradisional",
+    timelineHeading: "ATUR CARA MAJLIS",
+    timelineSub: "Tentatif Program · Supaya korang tahu apa yang berlaku & bila ✨",
+    tl1Time: "5:30 PTG",
+    tl1Title: "Ketibaan Tetamu & Keluarga Isma",
+    tl1Desc: "Sila ambil tempat duduk dan beramah mesra bersama keluarga.",
+    tl2Time: "5:45 PTG",
+    tl2Title: "Ketibaan Rombongan Keluarga Atif",
+    tl2Desc: "Rombongan pihak lelaki tiba dengan penuh ceria.",
+    tl3Time: "6:00 PTG",
+    tl3Title: "Majlis Pertunangan Bermula",
+    tl3Desc: "Perarakan & Penyerahan Hantaran.",
+    tl4Time: "6:05 PTG",
+    tl4Title: "Bacaan Doa Selamat",
+    tl4Desc: "Memohon keberkatan untuk langkah seterusnya.",
+    tl5Time: "6:10 PTG",
+    tl5Title: "Ucapan & Penyampaian Hasrat",
+    tl5Desc: "Oleh Wakil Keluarga Pihak Lelaki (Atif).",
+    tl6Time: "6:15 PTG",
+    tl6Title: "Jawapan & Penerimaan Pihak Perempuan",
+    tl6Desc: "Kata-kata penerimaan & persetujuan dari keluarga Isma.",
+    tl7Time: "6:20 PTG",
+    tl7Title: "Upacara Menyarung Cincin 💍",
+    tl7Desc: "Oleh Ibu Atif kepada Isma.",
+    tl8Time: "6:30 PTG",
+    tl8Title: "Sesi Bergambar Keluarga & Pasangan 📸",
+    tl8Desc: "Sesi fotografi rasmi bersama keluarga di atas pentas.",
+    tl9Time: "6:45 PTG",
+    tl9Title: "Jamuan Makan Malam 🍽️",
+    tl9Desc: "Masa menjamu selera! Nikmati hidangan lazat bersama tetamu.",
+    tl10Time: "7:15 PTG",
+    tl10Title: "Solat Maghrib 🕌",
+    tl10Desc: "Rehat sebentar untuk menunaikan solat Maghrib.",
+    tl11Time: "7:45 PTG",
+    tl11Title: "Sesi Santai, Bergambar & Beramah Mesra",
+    tl11Desc: "Luangkan masa bersembang, selfie, OOTD dan meraikan bersama.",
+    tl12Time: "9:30 PTG",
+    tl12Title: "Sesi Balas Hantaran 🎁",
+    tl12Desc: "Pertukaran dulang hantaran antara kedua-dua belah pihak.",
+    tl13Time: "10:00 MLM",
+    tl13Title: "Majlis Bersurai ✨",
+    tl13Desc: "Terima kasih kerana meraikan bersama kami! Pandu cermat & beritahu bila selamat sampai.",
+    dneBtn: "JANGAN KLIK ⚠️",
+    secretTitle: "anda jumpa rahsia",
+    secretText: "Korang memang ada sifat ingin tahu yang tinggi ya. Kami tabik. 💀",
+    secretClose: "okay bye 👋",
+    dneTitle: "Dah kata JANGAN KLIK.",
+    dneP2: "Tapi sampai sini juga. Kelakar lah korang. Kami hargai rasa ingin tahu korang! ✨",
+    dneClose: "Okay baiklah, patah balik 👋",
+    footerMadeWith: "Dicipta dengan ❤️ & banyak stress perancangan majlis.",
+    footerTiny: "Kehadiran anda adalah hadiah terindah. Sentiasa.",
+    footerRights: "Hak cipta terpelihara (untuk bertunang).",
+    musicPlay: "PUTAR",
+    musicPlaying: "DIMAINKAN"
+  }
+};
+
+let currentLang = "en";
+try {
+  const saved = localStorage.getItem("wedding_lang");
+  if (saved === "bm" || saved === "en") currentLang = saved;
+} catch (e) {}
+
+function setLanguage(lang) {
+  if (lang !== "en" && lang !== "bm") lang = "en";
+  currentLang = lang;
+  try {
+    localStorage.setItem("wedding_lang", lang);
+  } catch (e) {}
+
+  document.documentElement.lang = lang === "bm" ? "ms" : "en";
+
+  // Toggle buttons
+  const btnEn = document.getElementById("langBtnEn");
+  const btnBm = document.getElementById("langBtnBm");
+  if (btnEn) {
+    btnEn.classList.toggle("active", lang === "en");
+    btnEn.setAttribute("aria-pressed", lang === "en" ? "true" : "false");
+  }
+  if (btnBm) {
+    btnBm.classList.toggle("active", lang === "bm");
+    btnBm.setAttribute("aria-pressed", lang === "bm" ? "true" : "false");
+  }
+
+  // Update elements with data-i18n
+  const dict = translations[lang] || translations.en;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (dict[key] !== undefined) {
+      if (el.hasAttribute("data-i18n-html")) {
+        el.innerHTML = dict[key];
+      } else {
+        el.textContent = dict[key];
+      }
+    }
+  });
+
+  // Dynamic values in details & hero
+  const detailDate = document.getElementById("detailDate");
+  if (detailDate) detailDate.textContent = dict.detailDate;
+
+  const detailTime = document.getElementById("detailTime");
+  if (detailTime) detailTime.textContent = dict.detailTime;
+
+  const detailDressCode = document.getElementById("detailDressCode");
+  if (detailDressCode) detailDressCode.textContent = dict.detailDressCode;
+
+  const heroDate = document.getElementById("heroDate");
+  if (heroDate) heroDate.textContent = dict.heroDate;
+
+  const footerDate = document.getElementById("footerDate");
+  if (footerDate) footerDate.textContent = dict.detailDate;
+
+  // Music button label
+  const musicLabel = document.querySelector(".music-btn .music-label");
+  const audio = document.getElementById("weddingAudio");
+  const songName = weddingConfig.musicTitle || "Bernaung";
+  if (musicLabel) {
+    if (audio && !audio.paused) {
+      musicLabel.textContent = `${dict.musicPlaying} ♪`;
+    } else {
+      musicLabel.textContent = `${songName.toUpperCase()} · ${dict.musicPlay}`;
+    }
+  }
+}
+
+function initLanguageToggle() {
+  const btnEn = document.getElementById("langBtnEn");
+  const btnBm = document.getElementById("langBtnBm");
+
+  if (btnEn) {
+    btnEn.addEventListener("click", () => setLanguage("en"));
+  }
+  if (btnBm) {
+    btnBm.addEventListener("click", () => setLanguage("bm"));
+  }
+
+  // Apply default/saved language
+  setLanguage(currentLang);
+}
+
+/* ============================================================
    INIT — Run everything
    ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
   initConfig();
+  initLanguageToggle();
   initCountdown();
   initNav();
   initCursor();

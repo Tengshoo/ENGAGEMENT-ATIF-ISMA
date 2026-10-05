@@ -30,13 +30,21 @@
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Caveat:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=3.5" />
+  <link rel="stylesheet" href="style.css?v=3.6" />
 </head>
 
 <body>
   <!-- Custom Cursor (desktop only) -->
   <div class="cursor" id="cursor" aria-hidden="true"></div>
   <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+  <!-- LANGUAGE CHANGE TOGGLE (Top Right) -->
+  <div class="lang-toggle-wrap" id="langToggleWrap">
+    <div class="lang-toggle" role="group" aria-label="Change Language / Tukar Bahasa">
+      <button type="button" class="lang-btn active" id="langBtnEn" data-lang="en" aria-pressed="true">ENG</button>
+      <button type="button" class="lang-btn" id="langBtnBm" data-lang="bm" aria-pressed="false">BM</button>
+    </div>
+  </div>
 
   <!-- Floating Music Button -->
   <button class="music-btn" id="musicBtn" aria-label="Play or pause Bernaung by Feby Putri">
@@ -52,10 +60,10 @@
   <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
     <div class="nav-logo" id="navLogo" aria-label="Home">💍</div>
     <ul class="nav-links" role="list">
-      <li><a href="#hero" class="nav-link">HOME</a></li>
-      <li><a href="#story" class="nav-link">STORY</a></li>
-      <li><a href="#details" class="nav-link">DETAILS</a></li>
-      <li><a href="#event-timeline" class="nav-link">PROGRAMME</a></li>
+      <li><a href="#hero" class="nav-link" data-i18n="navHome">HOME</a></li>
+      <li><a href="#story" class="nav-link" data-i18n="navStory">STORY</a></li>
+      <li><a href="#details" class="nav-link" data-i18n="navDetails">DETAILS</a></li>
+      <li><a href="#event-timeline" class="nav-link" data-i18n="navProgramme">PROGRAMME</a></li>
     </ul>
   </nav>
 
@@ -63,19 +71,19 @@
   <nav class="bottom-nav" role="navigation" aria-label="Mobile navigation">
     <a href="#hero" class="bottom-nav-item">
       <span class="bottom-nav-icon">🏠</span>
-      <span class="bottom-nav-label">Home</span>
+      <span class="bottom-nav-label" data-i18n="navHome">Home</span>
     </a>
     <a href="#story" class="bottom-nav-item">
       <span class="bottom-nav-icon">📖</span>
-      <span class="bottom-nav-label">Story</span>
+      <span class="bottom-nav-label" data-i18n="navStory">Story</span>
     </a>
     <a href="#details" class="bottom-nav-item">
       <span class="bottom-nav-icon">📋</span>
-      <span class="bottom-nav-label">Details</span>
+      <span class="bottom-nav-label" data-i18n="navDetails">Details</span>
     </a>
     <a href="#event-timeline" class="bottom-nav-item">
       <span class="bottom-nav-icon">🕒</span>
-      <span class="bottom-nav-label">Programme</span>
+      <span class="bottom-nav-label" data-i18n="navProgramme">Programme</span>
     </a>
   </nav>
 
@@ -92,10 +100,10 @@
         <!-- Left: main text -->
         <div class="hero-text-col">
           <div class="hero-tag reveal-up">
-            <span>✨</span> IT'S HAPPENING <span>✨</span>
+            <span>✨</span> <span data-i18n="heroTag">IT'S HAPPENING</span> <span>✨</span>
           </div>
 
-          <p class="hero-pretitle reveal-up">
+          <p class="hero-pretitle reveal-up" data-i18n="heroPretitle">
             THE ENGAGEMENT OF
           </p>
 
@@ -106,10 +114,10 @@
           </h1>
 
           <p class="hero-caption reveal-up">
-            <em>Welp... this is actually happening.</em> 💀
+            <em data-i18n="heroCaption">Welp... this is actually happening.</em> 💀
           </p>
 
-          <p class="hero-date reveal-up" id="heroDate">26 DECEMBER 2026</p>
+          <p class="hero-date reveal-up" id="heroDate" data-i18n="heroDate">26 DECEMBER 2026</p>
           <p class="hero-location reveal-up" id="heroLocation">
             <span class="hero-loc-pin" aria-hidden="true">📍</span>
             <a href="#details" class="hero-location-link" id="heroLocationLink">ONETWO KL</a>
@@ -117,34 +125,34 @@
 
           <!-- Countdown -->
           <div class="countdown reveal-up" aria-label="Countdown to wedding">
-            <p class="countdown-label">THE FINAL COUNTDOWN ⏳</p>
+            <p class="countdown-label" data-i18n="countdownLabel">THE FINAL COUNTDOWN ⏳</p>
             <div class="countdown-grid" role="timer" aria-live="polite">
               <div class="countdown-block">
                 <span class="countdown-num" id="cdDays">00</span>
-                <span class="countdown-unit">DAYS</span>
+                <span class="countdown-unit" data-i18n="cdDays">DAYS</span>
               </div>
               <div class="countdown-sep" aria-hidden="true">:</div>
               <div class="countdown-block">
                 <span class="countdown-num" id="cdHours">00</span>
-                <span class="countdown-unit">HRS</span>
+                <span class="countdown-unit" data-i18n="cdHours">HRS</span>
               </div>
               <div class="countdown-sep" aria-hidden="true">:</div>
               <div class="countdown-block">
                 <span class="countdown-num" id="cdMins">00</span>
-                <span class="countdown-unit">MIN</span>
+                <span class="countdown-unit" data-i18n="cdMins">MIN</span>
               </div>
               <div class="countdown-sep" aria-hidden="true">:</div>
               <div class="countdown-block">
                 <span class="countdown-num" id="cdSecs">00</span>
-                <span class="countdown-unit">SEC</span>
+                <span class="countdown-unit" data-i18n="cdSecs">SEC</span>
               </div>
             </div>
           </div>
 
           <!-- CTAs -->
           <div class="hero-ctas reveal-up">
-            <a href="#details" class="btn btn--primary" id="heroDetailsBtn">EVENT DETAILS →</a>
-            <a href="#story" class="btn btn--ghost">Our Story ↓</a>
+            <a href="#details" class="btn btn--primary" id="heroDetailsBtn" data-i18n="heroDetailsBtn">EVENT DETAILS →</a>
+            <a href="#story" class="btn btn--ghost" data-i18n="heroStoryBtn">Our Story ↓</a>
           </div>
         </div>
 
@@ -152,7 +160,7 @@
       </div>
 
       <div class="hero-scroll" aria-hidden="true">
-        <span>scroll down</span>
+        <span data-i18n="heroScroll">scroll down</span>
         <div class="hero-scroll-line"></div>
       </div>
     </section>
@@ -163,17 +171,17 @@
     <section class="story" id="story" aria-labelledby="storyHeading">
       <div class="container">
         <div class="section-header reveal-up">
-          <h2 class="section-heading" id="storyHeading">HOW DID WE GET HERE?</h2>
-          <p class="section-sub">A completely unhinged timeline of two people in denial.</p>
+          <h2 class="section-heading" id="storyHeading" data-i18n="storyHeading">HOW DID WE GET HERE?</h2>
+          <p class="section-sub" data-i18n="storySub">A completely unhinged timeline of two people in denial.</p>
         </div>
 
         <div class="timeline" role="list">
           <div class="timeline-item reveal-up" role="listitem">
             <div class="timeline-dot" aria-hidden="true">✨</div>
             <div class="timeline-card">
-              <div class="timeline-tag">THE FIRST MEET</div>
+              <div class="timeline-tag" data-i18n="storyTag1">THE FIRST MEET</div>
               <div class="timeline-date"><!-- EDITABLE --></div>
-              <p class="timeline-text">The universe decided to be sneaky. Neither of us saw it coming. Classic origin
+              <p class="timeline-text" data-i18n="storyText1">The universe decided to be sneaky. Neither of us saw it coming. Classic origin
                 story, honestly.</p>
               <div class="timeline-sticker" aria-hidden="true">👀</div>
             </div>
@@ -182,9 +190,9 @@
           <div class="timeline-item timeline-item--right reveal-up" role="listitem">
             <div class="timeline-dot" aria-hidden="true">☕</div>
             <div class="timeline-card">
-              <div class="timeline-tag">THE FIRST DATE</div>
+              <div class="timeline-tag" data-i18n="storyTag2">THE FIRST DATE</div>
               <div class="timeline-date"><!-- EDITABLE --></div>
-              <p class="timeline-text">Was it a date? Was it hanging out? We both knew. We both pretended we didn't.</p>
+              <p class="timeline-text" data-i18n="storyText2">Was it a date? Was it hanging out? We both knew. We both pretended we didn't.</p>
               <div class="timeline-sticker" aria-hidden="true">😅</div>
             </div>
           </div>
@@ -192,9 +200,9 @@
           <div class="timeline-item reveal-up" role="listitem">
             <div class="timeline-dot" aria-hidden="true">💫</div>
             <div class="timeline-card">
-              <div class="timeline-tag">THE "OH NO, I LIKE YOU" ERA</div>
+              <div class="timeline-tag" data-i18n="storyTag3">THE "OH NO, I LIKE YOU" ERA</div>
               <div class="timeline-date"><!-- EDITABLE --></div>
-              <p class="timeline-text">Panic. Butterflies. Overthinking. Typing and deleting texts. You know the drill.
+              <p class="timeline-text" data-i18n="storyText3">Panic. Butterflies. Overthinking. Typing and deleting texts. You know the drill.
               </p>
               <div class="timeline-sticker" aria-hidden="true">😭</div>
             </div>
@@ -203,9 +211,9 @@
           <div class="timeline-item timeline-item--right reveal-up" role="listitem">
             <div class="timeline-dot" aria-hidden="true">🎉</div>
             <div class="timeline-card">
-              <div class="timeline-tag">THE OFFICIAL ERA</div>
+              <div class="timeline-tag" data-i18n="storyTag4">THE OFFICIAL ERA</div>
               <div class="timeline-date"><!-- EDITABLE --></div>
-              <p class="timeline-text">We stopped pretending. It was official. The group chat went crazy. Rightfully so.
+              <p class="timeline-text" data-i18n="storyText4">We stopped pretending. It was official. The group chat went crazy. Rightfully so.
               </p>
               <div class="timeline-sticker" aria-hidden="true">💑</div>
             </div>
@@ -214,9 +222,9 @@
           <div class="timeline-item reveal-up" role="listitem">
             <div class="timeline-dot" aria-hidden="true">💍</div>
             <div class="timeline-card">
-              <div class="timeline-tag">THE PROPOSAL</div>
+              <div class="timeline-tag" data-i18n="storyTag5">THE PROPOSAL</div>
               <div class="timeline-date"><!-- EDITABLE --></div>
-              <p class="timeline-text">He actually did it. She said yes. We both cried. Don't @ us.</p>
+              <p class="timeline-text" data-i18n="storyText5">He actually did it. She said yes. We both cried. Don't @ us.</p>
               <div class="timeline-sticker" aria-hidden="true">🥹</div>
             </div>
           </div>
@@ -224,9 +232,9 @@
           <div class="timeline-item timeline-item--right reveal-up" role="listitem">
             <div class="timeline-dot" aria-hidden="true">🎊</div>
             <div class="timeline-card">
-              <div class="timeline-tag">THE "WE'RE ACTUALLY GETTING ENGAGED" ERA</div>
-              <div class="timeline-date">NOW</div>
-              <p class="timeline-text">This is it. The chaos, the love, the stress, the joy. And now you're here for it.
+              <div class="timeline-tag" data-i18n="storyTag6">THE "WE'RE ACTUALLY GETTING ENGAGED" ERA</div>
+              <div class="timeline-date" data-i18n="storyDate6">NOW</div>
+              <p class="timeline-text" data-i18n="storyText6">This is it. The chaos, the love, the stress, the joy. And now you're here for it.
                 Thank you. 💙</p>
               <div class="timeline-sticker" aria-hidden="true">🎊</div>
             </div>
@@ -239,8 +247,8 @@
     <section class="couple-section" id="couple" aria-labelledby="coupleHeading">
       <div class="container">
         <div class="section-header reveal-up">
-          <h2 class="section-heading" id="coupleHeading">THE MAIN CHARACTERS</h2>
-          <p class="section-sub">In case you forgot who this is about.</p>
+          <h2 class="section-heading" id="coupleHeading" data-i18n="coupleHeading">THE MAIN CHARACTERS</h2>
+          <p class="section-sub" data-i18n="coupleSub">In case you forgot who this is about.</p>
         </div>
 
         <div class="couple-grid">
@@ -253,14 +261,14 @@
             </div>
             <div class="profile-body">
               <h3 class="profile-name">ATIF</h3>
-              <p class="profile-role">Professional Overthinker</p>
+              <p class="profile-role" data-i18n="atifRole">Professional Overthinker</p>
               <div class="profile-tags">
-                <span class="profile-tag">🚗 Cars</span>
-                <span class="profile-tag">⚙️ Engineering</span>
-                <span class="profile-tag">🍔 Food</span>
-                <span class="profile-tag">🤔 Overthinking</span>
+                <span class="profile-tag" data-i18n="atifTag1">🚗 Cars</span>
+                <span class="profile-tag" data-i18n="atifTag2">⚙️ Engineering</span>
+                <span class="profile-tag" data-i18n="atifTag3">🍔 Food</span>
+                <span class="profile-tag" data-i18n="atifTag4">🤔 Overthinking</span>
               </div>
-              <p class="profile-bio"><!-- EDITABLE --> Always has a plan. Never follows it. Somehow things still work
+              <p class="profile-bio" data-i18n="atifBio"><!-- EDITABLE --> Always has a plan. Never follows it. Somehow things still work
                 out. Probably because of Isma.</p>
             </div>
           </div>
@@ -279,15 +287,15 @@
             </div>
             <div class="profile-body">
               <h3 class="profile-name">ISMA</h3>
-              <p class="profile-role">CEO of Being Right</p>
+              <p class="profile-role" data-i18n="ismaRole">CEO of Being Right</p>
               <div class="profile-tags">
                 <!-- EDITABLE -->
-                <span class="profile-tag">👑 Queen</span>
-                <span class="profile-tag">✨ Vibes</span>
-                <span class="profile-tag">💅 Always Right</span>
-                <span class="profile-tag">🎨 Creative</span>
+                <span class="profile-tag" data-i18n="ismaTag1">👑 Queen</span>
+                <span class="profile-tag" data-i18n="ismaTag2">✨ Vibes</span>
+                <span class="profile-tag" data-i18n="ismaTag3">💅 Always Right</span>
+                <span class="profile-tag" data-i18n="ismaTag4">🎨 Creative</span>
               </div>
-              <p class="profile-bio"><!-- EDITABLE --> Has been right about everything since day one. Atif is slowly
+              <p class="profile-bio" data-i18n="ismaBio"><!-- EDITABLE --> Has been right about everything since day one. Atif is slowly
                 accepting this. Growth.</p>
             </div>
           </div>
@@ -299,8 +307,8 @@
     <section class="receipts" id="receipts" aria-labelledby="receiptsHeading">
       <div class="container">
         <div class="section-header reveal-up">
-          <h2 class="section-heading" id="receiptsHeading">RECEIPTS 📸</h2>
-          <p class="section-sub">Proof that we actually have fun together.</p>
+          <h2 class="section-heading" id="receiptsHeading" data-i18n="receiptsHeading">RECEIPTS 📸</h2>
+          <p class="section-sub" data-i18n="receiptsSub">Proof that we actually have fun together.</p>
         </div>
 
         <div class="gallery reveal-up">
@@ -308,33 +316,33 @@
           <div class="gallery-item gallery-item--large" tabindex="0" aria-label="Photo: caught in 4K">
             <img src="assets/images/gallery-1.jpg" alt="caught in 4K - Atif and Isma selfie" class="gallery-img"
               loading="lazy" />
-            <div class="gallery-caption">caught in 4K</div>
+            <div class="gallery-caption" data-i18n="caption1">caught in 4K</div>
           </div>
           <div class="gallery-item" tabindex="0" aria-label="Photo: before the wedding planning stress">
             <img src="assets/images/gallery-2.jpg" alt="before the wedding planning stress - sunset walk"
               class="gallery-img" loading="lazy" />
-            <div class="gallery-caption">before the wedding planning stress</div>
+            <div class="gallery-caption" data-i18n="caption2">before the wedding planning stress</div>
           </div>
           <div class="gallery-item" tabindex="0" aria-label="Photo: she said yes">
             <img src="assets/images/gallery-3.jpg" alt="she said yes - engagement ring" class="gallery-img"
               loading="lazy" />
-            <div class="gallery-caption">she said yes 🥹</div>
+            <div class="gallery-caption" data-i18n="caption3">she said yes 🥹</div>
           </div>
           <div class="gallery-item gallery-item--tall" tabindex="0"
             aria-label="Photo: he had no idea what he was doing">
             <img src="assets/images/gallery-4.jpg" alt="he had no idea what he was doing - playful cooking"
               class="gallery-img" loading="lazy" />
-            <div class="gallery-caption">he had no idea what he was doing</div>
+            <div class="gallery-caption" data-i18n="caption4">he had no idea what he was doing</div>
           </div>
           <div class="gallery-item" tabindex="0" aria-label="Photo: certified yap session">
             <img src="assets/images/gallery-5.jpg" alt="certified yap session - coffee date" class="gallery-img"
               loading="lazy" />
-            <div class="gallery-caption">certified yap session</div>
+            <div class="gallery-caption" data-i18n="caption5">certified yap session</div>
           </div>
           <div class="gallery-item" tabindex="0" aria-label="Photo: us every weekend">
             <img src="assets/images/gallery-6.jpg" alt="us every weekend honestly - cozy boba couch moment"
               class="gallery-img" loading="lazy" />
-            <div class="gallery-caption">us every weekend honestly</div>
+            <div class="gallery-caption" data-i18n="caption6">us every weekend honestly</div>
           </div>
         </div>
       </div>
@@ -349,7 +357,7 @@
               <path
                 d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
             </svg>
-            <span>OUR CEREMONY ANTHEM · ON SPOTIFY</span>
+            <span data-i18n="soundtrackBadge">OUR CEREMONY ANTHEM · ON SPOTIFY</span>
           </div>
           <h3 class="soundtrack-title" id="soundtrackHeading">Bernaung</h3>
           <p class="soundtrack-artist">Feby Putri</p>
@@ -367,24 +375,24 @@
     <section class="details" id="details" aria-labelledby="detailsHeading">
       <div class="container">
         <div class="section-header reveal-up">
-          <h2 class="section-heading" id="detailsHeading">THE IMPORTANT STUFF</h2>
-          <p class="section-sub">Screenshot this. We're serious.</p>
+          <h2 class="section-heading" id="detailsHeading" data-i18n="detailsHeading">THE IMPORTANT STUFF</h2>
+          <p class="section-sub" data-i18n="detailsSub">Screenshot this. We're serious.</p>
         </div>
 
         <div class="details-grid">
           <div class="detail-card reveal-up" aria-label="Wedding date">
             <div class="detail-icon" aria-hidden="true">📅</div>
-            <div class="detail-label">DATE</div>
+            <div class="detail-label" data-i18n="labelDate">DATE</div>
             <div class="detail-value" id="detailDate">26 December 2026</div>
           </div>
           <div class="detail-card reveal-up" aria-label="Wedding time">
             <div class="detail-icon" aria-hidden="true">⏰</div>
-            <div class="detail-label">TIME</div>
+            <div class="detail-label" data-i18n="labelTime">TIME</div>
             <div class="detail-value" id="detailTime">5:30 PM — 10:00 PM</div>
           </div>
           <div class="detail-card detail-card--wide reveal-up" aria-label="Wedding venue">
             <div class="detail-icon" aria-hidden="true">📍</div>
-            <div class="detail-label">VENUE</div>
+            <div class="detail-label" data-i18n="labelVenue">VENUE</div>
             <div class="detail-value" id="detailVenue">ONETWO KL</div>
             <div class="detail-address" id="detailAddress">3 Towers, 296, Jln Ampang, Kuala Ampang, 50450 Ampang,
               Wilayah Persekutuan Kuala Lumpur</div>
@@ -402,9 +410,9 @@
                 onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_yITu5blTQkoDVOX6KyPvWpKFOJkO-lsESfSDy3jKsCsOfj99tVGFJP4&amp;s=10'"
                 alt="Traditional Outfit Icon" class="dresscode-detail-img" />
             </div>
-            <div class="detail-label">DRESS CODE</div>
+            <div class="detail-label" data-i18n="labelDresscode">DRESS CODE</div>
             <div class="detail-value" id="detailDressCode">Traditional Outfit</div>
-            <div class="detail-sub-hint">Baju Kurung &amp; Baju Melayu</div>
+            <div class="detail-sub-hint" data-i18n="detailSubHint">Baju Kurung &amp; Baju Melayu</div>
           </div>
         </div>
       </div>
@@ -414,37 +422,37 @@
     <section class="dresscode" id="dresscode" aria-labelledby="dresscodeHeading">
       <div class="container">
         <div class="section-header reveal-up">
-          <h2 class="section-heading" id="dresscodeHeading">WHAT DO I WEAR?</h2>
-          <p class="section-sub">Pick ur side wisely:</p>
+          <h2 class="section-heading" id="dresscodeHeading" data-i18n="wearHeading">WHAT DO I WEAR?</h2>
+          <p class="section-sub" data-i18n="wearSub">Pick ur side wisely:</p>
         </div>
 
         <div class="dresscode-cards reveal-up">
           <!-- TEAM ATIF -->
           <div class="dresscode-card" aria-label="Team Atif - Butter Yellow">
             <div class="dresscode-header-highlight dresscode-header-highlight--atif">
-              <h3 class="team-header-title">TEAM ATIF</h3>
+              <h3 class="team-header-title" data-i18n="teamAtif">TEAM ATIF</h3>
             </div>
             <div class="color-swatch"
               style="background:#FDF0A6; border: 1.5px solid rgba(226,205,104,0.65); box-shadow: 0 4px 16px rgba(253,240,166,0.55);"
               aria-hidden="true"></div>
-            <p class="dresscode-color-name">Butter Yellow</p>
-            <p class="dresscode-card-hint">Soft pastel yellow &amp; buttercream</p>
+            <p class="dresscode-color-name" data-i18n="colorYellow">Butter Yellow</p>
+            <p class="dresscode-card-hint" data-i18n="hintYellow">Soft pastel yellow &amp; buttercream</p>
           </div>
 
           <!-- TEAM ISMA -->
           <div class="dresscode-card" aria-label="Team Isma - Dusty Pink">
             <div class="dresscode-header-highlight dresscode-header-highlight--isma">
-              <h3 class="team-header-title">TEAM ISMA</h3>
+              <h3 class="team-header-title" data-i18n="teamIsma">TEAM ISMA</h3>
             </div>
             <div class="color-swatch" style="background:#D8A4A4; box-shadow: 0 4px 16px rgba(216,164,164,0.45);"
               aria-hidden="true"></div>
-            <p class="dresscode-color-name">Dusty Pink</p>
-            <p class="dresscode-card-hint">Soft pinks, blush &amp; mauve tones</p>
+            <p class="dresscode-color-name" data-i18n="colorPink">Dusty Pink</p>
+            <p class="dresscode-card-hint" data-i18n="hintPink">Soft pinks, blush &amp; mauve tones</p>
           </div>
         </div>
 
         <p class="dresscode-note reveal-up">
-          Theme: <strong id="dresscodeTheme">Traditional Outfit</strong>
+          <span data-i18n="themeLabel">Theme:</span> <strong id="dresscodeTheme" data-i18n="themeVal">Traditional Outfit</strong>
         </p>
       </div>
     </section>
@@ -453,136 +461,134 @@
     <section class="event-timeline" id="event-timeline" aria-labelledby="eventTimelineHeading">
       <div class="container">
         <div class="section-header reveal-up">
-          <h2 class="section-heading" id="eventTimelineHeading">ENGAGEMENT CEREMONY</h2>
-          <p class="section-sub">Tentative Programme · So you actually know what's happening and when ✨</p>
+          <h2 class="section-heading" id="eventTimelineHeading" data-i18n="timelineHeading">ENGAGEMENT CEREMONY</h2>
+          <p class="section-sub" data-i18n="timelineSub">Tentative Programme · So you actually know what's happening and when ✨</p>
         </div>
 
         <div class="event-timeline-list" role="list">
           <div class="event-timeline-item reveal-up" role="listitem">
-            <div class="et-time">5:30 PM</div>
+            <div class="et-time" data-i18n="tl1Time">5:30 PM</div>
             <div class="et-dot" aria-hidden="true"></div>
             <div class="et-event">
-              <strong>Arrival of Guests &amp; Isma’s Family Members</strong>
-              <p>Find a seat, get settled, and say hi to the family.</p>
+              <strong data-i18n="tl1Title">Arrival of Guests &amp; Isma’s Family Members</strong>
+              <p data-i18n="tl1Desc">Find a seat, get settled, and say hi to the family.</p>
             </div>
           </div>
 
           <div class="event-timeline-item reveal-up" role="listitem">
-            <div class="et-time">5:45 PM</div>
+            <div class="et-time" data-i18n="tl2Time">5:45 PM</div>
             <div class="et-dot" aria-hidden="true"></div>
             <div class="et-event">
-              <strong>Arrival of Atif’s Family</strong>
-              <p>The groom's entourage arrives with all the good energy.</p>
+              <strong data-i18n="tl2Title">Arrival of Atif’s Family</strong>
+              <p data-i18n="tl2Desc">The groom's entourage arrives with all the good energy.</p>
             </div>
           </div>
 
           <div class="event-timeline-item reveal-up" role="listitem">
-            <div class="et-time">6:00 PM</div>
+            <div class="et-time" data-i18n="tl3Time">6:00 PM</div>
             <div class="et-dot" aria-hidden="true"></div>
             <div class="et-event">
-              <strong>Engagement Ceremony Begins</strong>
-              <p>Hantaran Procession &amp; Presentation.</p>
+              <strong data-i18n="tl3Title">Engagement Ceremony Begins</strong>
+              <p data-i18n="tl3Desc">Hantaran Procession &amp; Presentation.</p>
             </div>
           </div>
 
           <div class="event-timeline-item reveal-up" role="listitem">
-            <div class="et-time">6:05 PM</div>
+            <div class="et-time" data-i18n="tl4Time">6:05 PM</div>
             <div class="et-dot" aria-hidden="true"></div>
             <div class="et-event">
-              <strong>Recitation of Doa</strong>
-              <p>Seeking blessings for the journey ahead.</p>
+              <strong data-i18n="tl4Title">Recitation of Doa</strong>
+              <p data-i18n="tl4Desc">Seeking blessings for the journey ahead.</p>
             </div>
           </div>
 
           <div class="event-timeline-item reveal-up" role="listitem">
-            <div class="et-time">6:10 PM</div>
+            <div class="et-time" data-i18n="tl5Time">6:10 PM</div>
             <div class="et-dot" aria-hidden="true"></div>
             <div class="et-event">
-              <strong>Speech &amp; Presentation of Intentions</strong>
-              <p>By Atif’s Family Representative.</p>
+              <strong data-i18n="tl5Title">Speech &amp; Presentation of Intentions</strong>
+              <p data-i18n="tl5Desc">By Atif’s Family Representative.</p>
             </div>
           </div>
 
           <div class="event-timeline-item reveal-up" role="listitem">
-            <div class="et-time">6:15 PM</div>
+            <div class="et-time" data-i18n="tl6Time">6:15 PM</div>
             <div class="et-dot" aria-hidden="true"></div>
             <div class="et-event">
-              <strong>Response by the Bride’s Family Representative</strong>
-              <p>Words of acceptance &amp; mutual joy from Isma's family.</p>
+              <strong data-i18n="tl6Title">Response by the Bride’s Family Representative</strong>
+              <p data-i18n="tl6Desc">Words of acceptance &amp; mutual joy from Isma's family.</p>
             </div>
           </div>
 
           <div class="event-timeline-item reveal-up" role="listitem">
-            <div class="et-time">6:20 PM</div>
+            <div class="et-time" data-i18n="tl7Time">6:20 PM</div>
             <div class="et-dot" aria-hidden="true"></div>
             <div class="et-event">
-              <strong>Engagement Ring Ceremony 💍</strong>
-              <p>By Atif’s Mother (Upacara Menyarungkan Cincin).</p>
+              <strong data-i18n="tl7Title">Engagement Ring Ceremony 💍</strong>
+              <p data-i18n="tl7Desc">By Atif’s Mother (Upacara Menyarungkan Cincin).</p>
             </div>
           </div>
 
           <div class="event-timeline-item reveal-up" role="listitem">
-            <div class="et-time">6:30 PM</div>
+            <div class="et-time" data-i18n="tl8Time">6:30 PM</div>
             <div class="et-dot" aria-hidden="true"></div>
             <div class="et-event">
-              <strong>Family &amp; Couple Photography Session 📸</strong>
-              <p>Official portraits and family photos on stage.</p>
+              <strong data-i18n="tl8Title">Family &amp; Couple Photography Session 📸</strong>
+              <p data-i18n="tl8Desc">Official portraits and family photos on stage.</p>
             </div>
           </div>
 
           <div class="event-timeline-item reveal-up" role="listitem">
-            <div class="et-time">6:45 PM</div>
+            <div class="et-time" data-i18n="tl9Time">6:45 PM</div>
             <div class="et-dot" aria-hidden="true"></div>
             <div class="et-event">
-              <strong>Dinner 🍽️</strong>
-              <p>Feast time! Enjoy the banquet and warm company.</p>
+              <strong data-i18n="tl9Title">Dinner 🍽️</strong>
+              <p data-i18n="tl9Desc">Feast time! Enjoy the banquet and warm company.</p>
             </div>
           </div>
 
           <div class="event-timeline-item reveal-up" role="listitem">
-            <div class="et-time">7:15 PM</div>
+            <div class="et-time" data-i18n="tl10Time">7:15 PM</div>
             <div class="et-dot" aria-hidden="true"></div>
             <div class="et-event">
-              <strong>Maghrib Prayer 🕌</strong>
-              <p>Prayer break for guests and family.</p>
+              <strong data-i18n="tl10Title">Maghrib Prayer 🕌</strong>
+              <p data-i18n="tl10Desc">Prayer break for guests and family.</p>
             </div>
           </div>
 
           <div class="event-timeline-item reveal-up" role="listitem">
-            <div class="et-time">7:45 PM</div>
+            <div class="et-time" data-i18n="tl11Time">7:45 PM</div>
             <div class="et-dot" aria-hidden="true"></div>
             <div class="et-event">
-              <strong>Casual Photography &amp; Mingling with Guests</strong>
-              <p>Catch up, snap selfies, OOTDs, and celebrate together.</p>
+              <strong data-i18n="tl11Title">Casual Photography &amp; Mingling with Guests</strong>
+              <p data-i18n="tl11Desc">Catch up, snap selfies, OOTDs, and celebrate together.</p>
             </div>
           </div>
 
           <div class="event-timeline-item reveal-up" role="listitem">
-            <div class="et-time">9:30 PM</div>
+            <div class="et-time" data-i18n="tl12Time">9:30 PM</div>
             <div class="et-dot" aria-hidden="true"></div>
             <div class="et-event">
-              <strong>Exchange &amp; Presentation of Engagement Gifts 🎁</strong>
-              <p>Balas hantaran &amp; gift handover between families.</p>
+              <strong data-i18n="tl12Title">Exchange &amp; Presentation of Engagement Gifts 🎁</strong>
+              <p data-i18n="tl12Desc">Balas hantaran &amp; gift handover between families.</p>
             </div>
           </div>
 
           <div class="event-timeline-item reveal-up" role="listitem">
-            <div class="et-time">10:00 PM</div>
+            <div class="et-time" data-i18n="tl13Time">10:00 PM</div>
             <div class="et-dot et-dot--end" aria-hidden="true"></div>
             <div class="et-event">
-              <strong>End of Ceremony ✨</strong>
-              <p>Thank you for celebrating with us! Drive safe &amp; text us when you arrive.</p>
+              <strong data-i18n="tl13Title">End of Ceremony ✨</strong>
+              <p data-i18n="tl13Desc">Thank you for celebrating with us! Drive safe &amp; text us when you arrive.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-
-
     <!-- DO NOT CLICK EASTER EGG -->
     <div class="dne-container">
-      <button class="dne-btn" id="dneBtn" aria-label="Secret button — do not click">DO NOT CLICK ⚠️</button>
+      <button class="dne-btn" id="dneBtn" aria-label="Secret button — do not click" data-i18n="dneBtn">DO NOT CLICK ⚠️</button>
     </div>
 
     <!-- FOOTER -->
@@ -595,11 +601,11 @@
         <p class="footer-date" id="footerDate"></p>
         <p class="footer-hashtag" id="footerHashtag"></p>
         <p class="footer-note">
-          Made with ❤️ &amp; a lot of wedding planning stress.<br />
-          <span class="footer-tiny">Your presence &gt; presents. Always.</span>
+          <span data-i18n="footerMadeWith">Made with ❤️ &amp; a lot of wedding planning stress.</span><br />
+          <span class="footer-tiny" data-i18n="footerTiny">Your presence &gt; presents. Always.</span>
         </p>
         <p class="footer-copy">
-          &copy; <span id="footerYear"></span> Atif &amp; Isma. All rights reserved (to get engaged).
+          &copy; <span id="footerYear"></span> Atif &amp; Isma. <span data-i18n="footerRights">All rights reserved (to get engaged).</span>
         </p>
       </div>
     </footer>
@@ -617,9 +623,9 @@
     aria-hidden="true">
     <div class="easter-egg-box">
       <div class="easter-egg-emoji">👀</div>
-      <h3>you found the secret</h3>
-      <p>Okay you are genuinely too curious. We respect it though. 💀</p>
-      <button class="btn btn--primary" id="closeEasterEgg">okay bye 👋</button>
+      <h3 data-i18n="secretTitle">you found the secret</h3>
+      <p data-i18n="secretText">Okay you are genuinely too curious. We respect it though. 💀</p>
+      <button class="btn btn--primary" id="closeEasterEgg" data-i18n="secretClose">okay bye 👋</button>
     </div>
   </div>
 
@@ -628,13 +634,13 @@
     aria-hidden="true">
     <div class="easter-egg-box">
       <div class="easter-egg-emoji">💀</div>
-      <h3>We said DO NOT CLICK.</h3>
-      <p>And yet here you are. Iconic behaviour. We appreciate the curiosity though! ✨</p>
-      <button class="btn btn--primary" id="closeDne">Okay fine, take me back 👋</button>
+      <h3 data-i18n="dneTitle">We said DO NOT CLICK.</h3>
+      <p data-i18n="dneP2">And yet here you are. Iconic behaviour. We appreciate the curiosity though! ✨</p>
+      <button class="btn btn--primary" id="closeDne" data-i18n="dneClose">Okay fine, take me back 👋</button>
     </div>
   </div>
 
-  <script src="script.js?v=3.5"></script>
+  <script src="script.js?v=3.6"></script>
 </body>
 
 </html>

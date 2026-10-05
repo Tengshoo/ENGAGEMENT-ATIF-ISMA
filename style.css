@@ -314,6 +314,63 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
 }
 .bottom-nav-rsvp:hover { color: #fff; background: var(--accent-hover); }
 
+/* ── LANGUAGE CHANGE TOGGLE (TOP RIGHT) ── */
+.lang-toggle-wrap {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.5rem;
+  z-index: 350;
+}
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 253, 247, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  padding: 3px;
+  box-shadow: 0 4px 18px var(--shadow);
+  transition: all var(--dur) var(--ease);
+}
+.lang-toggle:hover {
+  box-shadow: 0 8px 24px var(--shadow-md);
+  border-color: #d1c8b8;
+}
+.lang-btn {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  padding: 0.35rem 0.78rem;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.22s var(--ease);
+  line-height: 1;
+  user-select: none;
+}
+.lang-btn:hover {
+  color: var(--text);
+}
+.lang-btn.active {
+  background: var(--text);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 640px) {
+  .lang-toggle-wrap {
+    top: 0.9rem;
+    right: 0.9rem;
+  }
+  .lang-btn {
+    font-size: 0.68rem;
+    padding: 0.3rem 0.65rem;
+  }
+}
+
 /* ── MUSIC BUTTON ── */
 .music-btn {
   position: fixed;
