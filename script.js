@@ -1296,11 +1296,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initNav();
   initCursor();
   initReveal();
-  initRsvpHook();
-  initRsvpWishesTabs();
-  initRsvpForm();
-  initFaq();
-  initGuestbook();
   initMusic();
   initFloatingHearts();
   initEasterEggs();
