@@ -1685,28 +1685,16 @@ input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; marg
   text-align: center;
   box-shadow: 0 4px 20px var(--shadow);
   transition: transform var(--dur) var(--ease), box-shadow var(--dur);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .detail-card:hover { transform: translateY(-3px); box-shadow: 0 10px 36px var(--shadow-md); }
 .detail-card--wide { grid-column: span 2; }
 @media (max-width: 500px) { .detail-card--wide { grid-column: span 1; } }
 
 .detail-icon { font-size: 2rem; margin-bottom: 0.5rem; }
-.traditional-attire-wrap {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2.2rem;
-  margin-bottom: 0.4rem;
-}
-.attire-svg {
-  display: inline-block;
-  vertical-align: middle;
-  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.06));
-  transition: transform var(--dur) var(--ease);
-}
-.detail-card:hover .attire-svg {
-  transform: scale(1.1);
-}
 .detail-label {
   font-family: var(--font-heading);
   font-size: 0.68rem;
