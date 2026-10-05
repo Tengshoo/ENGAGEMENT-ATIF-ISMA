@@ -1714,10 +1714,28 @@ input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; marg
   font-family: var(--font-hand);
   font-size: 1.15rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--text-muted);
   margin-top: 0.35rem;
   line-height: 1.2;
   letter-spacing: 0.01em;
+}
+.dresscode-detail-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  margin-bottom: 0.4rem;
+}
+.dresscode-detail-img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  clip-path: inset(0 0 7% 0);
+  transition: transform var(--dur) var(--ease);
+}
+.detail-card:hover .dresscode-detail-img {
+  transform: scale(1.08);
 }
 .detail-address {
   font-size: 0.88rem;
