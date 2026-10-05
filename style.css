@@ -657,39 +657,43 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
   margin-bottom: 1.25rem;
 }
 
-.hero-heading {
+.hero-pretitle {
   font-family: var(--font-heading);
-  font-size: clamp(3rem, 9vw, 6.5rem);
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 0.92;
-  margin-bottom: 1.25rem;
-}
-.hero-heading-accent {
-  color: var(--accent);
-  font-style: italic;
-  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
 }
 
-.hero-subline {
+.hero-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2.75rem, 8.5vw, 6rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
+  gap: 0.25em 0.4em;
+  text-transform: uppercase;
 }
 .hero-names {
-  font-family: var(--font-heading);
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
 }
 .hero-ampersand {
   font-family: var(--font-serif);
-  font-size: 1.4rem;
+  font-size: 1.15em;
   font-style: italic;
+  font-weight: 400;
   color: var(--accent);
+  margin: 0 0.05em;
 }
 
 .hero-caption {
