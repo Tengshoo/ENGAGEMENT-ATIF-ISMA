@@ -8,11 +8,11 @@ const weddingConfig = {
   dateDisplay: "26 December 2026",
   timeDisplay: "5:15 PM — 10:00 PM",
   // EDITABLE: Venue details
-  venue: "The Grand Ballroom",
-  address: "123 Wedding Lane, Kuala Lumpur, Malaysia",
+  venue: "ONETWO KL",
+  address: "3 Towers, 296, Jln Ampang, Kuala Ampang, 50450 Ampang, Wilayah Persekutuan Kuala Lumpur",
   // EDITABLE: Navigation URLs (update to real coordinates/venues)
-  mapsUrl: "https://maps.google.com/?q=Kuala+Lumpur+Malaysia",
-  wazeUrl: "https://waze.com/ul?ll=3.1390,101.6869&navigate=yes",
+  mapsUrl: "https://www.google.com/maps/dir//ONETWO.KL,+3+Towers,+296,+Jln+Ampang,+Kuala+Ampang,+50450+Ampang,+Wilayah+Persekutuan+Kuala+Lumpur/@3.0647229,101.5361732,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31cc370c658e0411:0xfcee437ba2d2d794!2m2!1d101.7418851!2d3.1609996?entry=ttu",
+  wazeUrl: "https://waze.com/ul?ll=3.1609996,101.7418851&navigate=yes",
   // EDITABLE: Your music URL (mp3, ogg, or streaming link)
   musicUrl: "assets/music/our-song.mp3",
   musicTitle: "Bernaung",
@@ -201,6 +201,9 @@ function initConfig() {
   // Dates
   const d = document.getElementById("heroDate");
   if (d) d.textContent = weddingConfig.dateDisplay;
+
+  const hl = document.getElementById("heroLocationLink");
+  if (hl) hl.textContent = weddingConfig.venue;
 
   const dd = document.getElementById("detailDate");
   if (dd) dd.textContent = weddingConfig.dateDisplay;
