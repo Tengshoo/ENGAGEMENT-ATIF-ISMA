@@ -30,7 +30,7 @@
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Caveat:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=3.0" />
+  <link rel="stylesheet" href="style.css?v=3.1" />
 </head>
 
 <body>
@@ -380,7 +380,7 @@
           <div class="detail-card reveal-up" aria-label="Wedding time">
             <div class="detail-icon" aria-hidden="true">⏰</div>
             <div class="detail-label">TIME</div>
-            <div class="detail-value" id="detailTime">5:15 PM — 10:00 PM</div>
+            <div class="detail-value" id="detailTime">5:30 PM — 10:00 PM</div>
           </div>
           <div class="detail-card detail-card--wide reveal-up" aria-label="Wedding venue">
             <div class="detail-icon" aria-hidden="true">📍</div>
@@ -395,9 +395,35 @@
             </div>
           </div>
           <div class="detail-card reveal-up" aria-label="Dress code">
-            <div class="detail-icon" aria-hidden="true">👔</div>
+            <div class="detail-icon traditional-attire-wrap" aria-label="Baju Melayu &amp; Baju Kurung">
+              <svg class="attire-svg" viewBox="0 0 68 38" width="58" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Groom: Baju Melayu with Songkok -->
+                <g class="baju-melayu" transform="translate(2, 1)">
+                  <path d="M5 5 C5 3, 21 3, 21 5 L22 9 L4 9 Z" fill="#1f1f1f"/>
+                  <rect x="4" y="8.5" width="18" height="0.8" fill="#D4AF37"/>
+                  <path d="M10 9 L16 9 L16 11 L10 11 Z" fill="#FCE7D0"/>
+                  <path d="M9 11 L17 11 L19 13 L7 13 Z" fill="#D8A4A4"/>
+                  <path d="M6 13 L2 21 L6 22 L7 16 L7 28 L19 28 L19 16 L20 22 L24 21 L20 13 Z" fill="#D8A4A4"/>
+                  <circle cx="13" cy="14" r="0.6" fill="#FFD700"/>
+                  <circle cx="13" cy="16.5" r="0.6" fill="#FFD700"/>
+                  <circle cx="13" cy="19" r="0.6" fill="#FFD700"/>
+                  <path d="M6.5 24 L19.5 24 L20 29 L6 29 Z" fill="#FDF0A6" stroke="#D4AF37" stroke-width="0.7"/>
+                  <path d="M7 29 L7 35 L11 35 L11 31 L15 31 L15 35 L19 35 L19 29 Z" fill="#D8A4A4"/>
+                </g>
+                <!-- Bride: Baju Kurung with Hijab / Selendang -->
+                <g class="baju-kurung" transform="translate(36, 1)">
+                  <path d="M9 4 C13 1, 19 1, 23 4 C26 7, 26 12, 23 15 C21 16.5, 11 16.5, 9 15 C6 12, 6 7, 9 4 Z" fill="#FDF0A6" stroke="#E2CD68" stroke-width="0.6"/>
+                  <path d="M13 8.5 C13 7, 19 7, 19 8.5 C19 11.5, 13 11.5, 13 8.5 Z" fill="#FCE7D0"/>
+                  <path d="M9 15 L4 23 L8 24 L9 17 L9 27 L23 27 L23 17 L24 24 L28 23 L23 15 Z" fill="#D8A4A4"/>
+                  <circle cx="16" cy="17.5" r="1.1" fill="#FFD700"/>
+                  <path d="M9 27 L23 27 L24.5 35 L7.5 35 Z" fill="#C98B8B"/>
+                  <line x1="8" y1="31" x2="24" y2="31" stroke="#FDF0A6" stroke-width="0.6" stroke-dasharray="1.5 1"/>
+                </g>
+              </svg>
+            </div>
             <div class="detail-label">DRESS CODE</div>
-            <div class="detail-value" id="detailDressCode">Smart Casual · Earth Tones</div>
+            <div class="detail-value" id="detailDressCode">Traditional Outfit</div>
+            <div class="detail-sub-hint">Baju Kurung &amp; Baju Melayu</div>
           </div>
         </div>
       </div>
@@ -412,33 +438,21 @@
         </div>
 
         <div class="dresscode-cards reveal-up">
-          <!-- EDITABLE: Adjust colours to match your actual dress code -->
-          <div class="dresscode-card" aria-label="Earth tones">
-            <div class="color-swatch" style="background:#C4A882;" aria-hidden="true"></div>
-            <p class="dresscode-card-label">Earth Tones</p>
-            <p class="dresscode-card-hint">Warm beiges, dusty browns</p>
+          <div class="dresscode-card" aria-label="Dusty Pink">
+            <div class="color-swatch" style="background:#D8A4A4; box-shadow: 0 4px 14px rgba(216,164,164,0.4);" aria-hidden="true"></div>
+            <p class="dresscode-card-label">Dusty Pink</p>
+            <p class="dresscode-card-hint">Soft pinks, blush &amp; mauve tones</p>
           </div>
-          <div class="dresscode-card" aria-label="Sage and olive">
-            <div class="color-swatch" style="background:#8FAF8F;" aria-hidden="true"></div>
-            <p class="dresscode-card-label">Sage &amp; Olive</p>
-            <p class="dresscode-card-hint">Muted greens</p>
-          </div>
-          <div class="dresscode-card" aria-label="Dusty rose">
-            <div class="color-swatch" style="background:#C99A9A;" aria-hidden="true"></div>
-            <p class="dresscode-card-label">Dusty Rose</p>
-            <p class="dresscode-card-hint">Soft pinks &amp; mauves</p>
-          </div>
-          <div class="dresscode-card dresscode-card--avoid" aria-label="Avoid white">
-            <div class="color-swatch" style="background:#F8F8F8;border:2px dashed #ccc;" aria-hidden="true"></div>
-            <p class="dresscode-card-label">Not White</p>
-            <p class="dresscode-card-hint">Respectfully. You know why. 💀</p>
+          <div class="dresscode-card" aria-label="Butter Yellow">
+            <div class="color-swatch" style="background:#FDF0A6; border: 1.5px solid rgba(226,205,104,0.55); box-shadow: 0 4px 14px rgba(253,240,166,0.45);" aria-hidden="true"></div>
+            <p class="dresscode-card-label">Butter Yellow</p>
+            <p class="dresscode-card-hint">Soft pastel yellow &amp; buttercream</p>
           </div>
         </div>
 
         <p class="dresscode-note reveal-up">
-          <!-- EDITABLE -->
-          Theme: <strong id="dresscodeTheme">Smart Casual / Elegant Earth Tones</strong><br />
-          <em>Be comfortable. Be cute. Be on time.</em>
+          Theme: <strong id="dresscodeTheme">Traditional Outfit (Baju Kurung &amp; Baju Melayu)</strong><br />
+          <em>Colour Palette: Dusty Pink &amp; Butter Yellow ✨</em>
         </p>
       </div>
     </section>
@@ -453,7 +467,7 @@
 
         <div class="event-timeline-list" role="list">
           <div class="event-timeline-item reveal-up" role="listitem">
-            <div class="et-time">5:15 PM</div>
+            <div class="et-time">5:30 PM</div>
             <div class="et-dot" aria-hidden="true"></div>
             <div class="et-event">
               <strong>Arrival of Guests &amp; Isma’s Family Members</strong>
@@ -462,7 +476,7 @@
           </div>
 
           <div class="event-timeline-item reveal-up" role="listitem">
-            <div class="et-time">5:30 PM</div>
+            <div class="et-time">5:45 PM</div>
             <div class="et-dot" aria-hidden="true"></div>
             <div class="et-event">
               <strong>Arrival of Atif’s Family</strong>
@@ -628,7 +642,7 @@
     </div>
   </div>
 
-  <script src="script.js?v=3.0"></script>
+  <script src="script.js?v=3.1"></script>
 </body>
 
 </html>

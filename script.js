@@ -3,10 +3,10 @@ const weddingConfig = {
   groom: "Atif",
   bride: "Ismasari",
   // EDITABLE: Set your actual wedding date/time (ISO 8601)
-  date: "2026-12-26T17:15:00",
+  date: "2026-12-26T17:30:00",
   // EDITABLE: Display-format date string
   dateDisplay: "26 December 2026",
-  timeDisplay: "5:15 PM — 10:00 PM",
+  timeDisplay: "5:30 PM — 10:00 PM",
   // EDITABLE: Venue details
   venue: "ONETWO KL",
   address: "3 Towers, 296, Jln Ampang, Kuala Ampang, 50450 Ampang, Wilayah Persekutuan Kuala Lumpur",
@@ -21,7 +21,7 @@ const weddingConfig = {
   // EDITABLE: Social hashtag
   hashtag: "#AtifIsmaForever",
   // EDITABLE: Dress code summary
-  dressCode: "Smart Casual · Earth Tones",
+  dressCode: "Traditional Outfit",
 
   // ── BACKEND INTEGRATIONS ──
   // 1. Google Sheets Web App URL (Deploy Apps Script as Web App with access: Anyone)
