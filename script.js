@@ -1,11 +1,11 @@
 
 const weddingConfig = {
-  groom: "Muhammad Atif",
+  groom: "Atif",
   bride: "Ismasari",
   // EDITABLE: Set your actual wedding date/time (ISO 8601)
-  date: "2025-06-15T17:15:00",
+  date: "2026-12-26T17:15:00",
   // EDITABLE: Display-format date string
-  dateDisplay: "15 June 2025",
+  dateDisplay: "26 December 2026",
   timeDisplay: "5:15 PM — 10:00 PM",
   // EDITABLE: Venue details
   venue: "The Grand Ballroom",
@@ -1312,7 +1312,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /**
  * Wedding RSVP — script.js
- * Muhammad Atif & Ismasari
+ * Atif & Ismasari
  * ============================================================
  * CONFIGURATION — Edit everything here!
  * ============================================================
