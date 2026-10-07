@@ -1,3 +1,10 @@
+/**
+ * Wedding RSVP — script.js
+ * Atif & Ismasari
+ * ============================================================
+ * CONFIGURATION — Edit everything here!
+ * ============================================================
+ */
 
 const weddingConfig = {
   groom: "Atif",
@@ -990,6 +997,19 @@ function initGuestbook() {
 /* ============================================================
    MUSIC PLAYER
    ============================================================ */
+function updateMusicButtonLabel() {
+  const label = document.querySelector(".music-btn .music-label");
+  const audio = document.getElementById("weddingAudio");
+  if (!label) return;
+  const dict = (typeof translations !== "undefined" && translations[currentLang]) ? translations[currentLang] : (translations?.en || {});
+  const songName = weddingConfig.musicTitle || "Bernaung";
+  if (audio && !audio.paused) {
+    label.textContent = `${dict.musicPlaying || "NOW PLAYING"} ♪`;
+  } else {
+    label.textContent = `${songName.toUpperCase()} · ${dict.musicPlay || "PLAY"}`;
+  }
+}
+
 function initMusic() {
   const btn = document.getElementById("musicBtn");
   const audio = document.getElementById("weddingAudio");
@@ -1002,38 +1022,32 @@ function initMusic() {
   }
   btn.style.display = "flex";
 
-  const label = btn.querySelector(".music-label");
   const songName = weddingConfig.musicTitle || "Bernaung";
   const artist = weddingConfig.musicArtist || "Feby Putri";
 
-  if (label) label.textContent = `${songName.toUpperCase()} · PLAY`;
-
-  let playing = false;
+  updateMusicButtonLabel();
 
   btn.addEventListener("click", async () => {
     try {
-      if (playing) {
+      if (!audio.paused) {
         audio.pause();
-        playing = false;
         btn.classList.remove("playing");
-        if (label) label.textContent = `${songName.toUpperCase()} · PLAY`;
+        updateMusicButtonLabel();
       } else {
         await audio.play();
-        playing = true;
         btn.classList.add("playing");
-        if (label) label.textContent = `NOW PLAYING ♪`;
-        showToast(`🎵 Playing: ${songName} — ${artist}`);
+        updateMusicButtonLabel();
+        showToast(currentLang === "bm" ? `🎵 Sedang dimainkan: ${songName} — ${artist}` : `🎵 Playing: ${songName} — ${artist}`);
       }
     } catch (err) {
       console.warn("Music playback error:", err);
-      showToast("Tap again to play audio 🎵");
+      showToast(currentLang === "bm" ? "Ketik sekali lagi untuk mainkan lagu 🎵" : "Tap again to play audio 🎵");
     }
   });
 
   audio.addEventListener("ended", () => {
-    playing = false;
     btn.classList.remove("playing");
-    if (label) label.textContent = `${songName.toUpperCase()} · PLAY`;
+    updateMusicButtonLabel();
   });
 }
 
@@ -1376,7 +1390,7 @@ const translations = {
     tl1Desc: "Find a seat, get settled, and say hi to the family.",
     tl2Time: "5:45 PM",
     tl2Title: "Arrival of Atif’s Family",
-    tl2Desc: "The groom's entourage arrives with all the good energy.",
+    tl2Desc: "The groom's entourage arrives at the hall.",
     tl3Time: "6:00 PM",
     tl3Title: "Engagement Ceremony Begins",
     tl3Desc: "Hantaran Procession & Presentation.",
@@ -1505,7 +1519,7 @@ const translations = {
     tl1Desc: "Sila ambil tempat duduk dan beramah mesra bersama keluarga.",
     tl2Time: "5:45 PTG",
     tl2Title: "Ketibaan Rombongan Keluarga Atif",
-    tl2Desc: "Rombongan pihak lelaki tiba dengan penuh ceria.",
+    tl2Desc: "Rombongan pihak lelaki tiba di dewan.",
     tl3Time: "6:00 PTG",
     tl3Title: "Majlis Pertunangan Bermula",
     tl3Desc: "Perarakan & Penyerahan Hantaran.",
@@ -1530,10 +1544,10 @@ const translations = {
     tl10Time: "7:15 PTG",
     tl10Title: "Solat Maghrib 🕌",
     tl10Desc: "Rehat sebentar untuk menunaikan solat Maghrib.",
-    tl11Time: "7:45 PTG",
+    tl11Time: "7:45 MLM",
     tl11Title: "Sesi Santai, Bergambar & Beramah Mesra",
     tl11Desc: "Luangkan masa bersembang, selfie, OOTD dan meraikan bersama.",
-    tl12Time: "9:30 PTG",
+    tl12Time: "9:30 MLM",
     tl12Title: "Sesi Balas Hantaran 🎁",
     tl12Desc: "Pertukaran dulang hantaran antara kedua-dua belah pihak.",
     tl13Time: "10:00 MLM",
@@ -1568,6 +1582,9 @@ function setLanguage(lang) {
   } catch (e) {}
 
   document.documentElement.lang = lang === "bm" ? "ms" : "en";
+  document.title = lang === "bm"
+    ? "Atif & Isma — Majlis Pertunangan Kami 💍"
+    : "Atif & Isma — We're Getting Engaged 💍";
 
   // Toggle buttons
   const btnEn = document.getElementById("langBtnEn");
@@ -1611,16 +1628,7 @@ function setLanguage(lang) {
   if (footerDate) footerDate.textContent = dict.detailDate;
 
   // Music button label
-  const musicLabel = document.querySelector(".music-btn .music-label");
-  const audio = document.getElementById("weddingAudio");
-  const songName = weddingConfig.musicTitle || "Bernaung";
-  if (musicLabel) {
-    if (audio && !audio.paused) {
-      musicLabel.textContent = `${dict.musicPlaying} ♪`;
-    } else {
-      musicLabel.textContent = `${songName.toUpperCase()} · ${dict.musicPlay}`;
-    }
-  }
+  updateMusicButtonLabel();
 }
 
 function initLanguageToggle() {
@@ -1661,11 +1669,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, 100);
 });
-
-/**
- * Wedding RSVP — script.js
- * Atif & Ismasari
- * ============================================================
- * CONFIGURATION — Edit everything here!
- * ============================================================
- */
