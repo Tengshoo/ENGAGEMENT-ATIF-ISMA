@@ -198,6 +198,11 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
   margin-bottom: 0.75rem;
 }
 .easter-egg-box p { color: var(--text-muted); margin-bottom: 1.5rem; }
+.easter-egg-box .btn {
+  white-space: normal;
+  line-height: 1.35;
+  padding: 0.85rem 1.25rem;
+}
 
 /* ── DNE BUTTON ── */
 .dne-container {
