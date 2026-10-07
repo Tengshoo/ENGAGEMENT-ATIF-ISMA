@@ -1671,21 +1671,26 @@ input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; marg
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "top top"
+    "left1 tall"
+    "left2 tall"
+    "left3 right3"
+    "bottom bottom";
   gap: 1.25rem;
   max-width: 680px;
   margin-inline: auto;
 }
 @media (max-width: 640px) {
   .gallery {
-    grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
   }
 }
 
 .gallery-item {
   position: relative;
-  aspect-ratio: 1 / 1;
   width: 100%;
+  display: flex;
   background: var(--soft);
   border-radius: var(--radius);
   overflow: hidden;
@@ -1693,10 +1698,50 @@ input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; marg
   transition: transform 0.3s var(--ease), box-shadow 0.3s;
 }
 .gallery-item:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
   box-shadow: 0 12px 40px var(--shadow-md);
   z-index: 2;
 }
+
+/* Grid areas matching sketch layout */
+.gallery-item--top {
+  grid-area: top;
+  aspect-ratio: 16 / 9;
+}
+.gallery-item--left1 {
+  grid-area: left1;
+  aspect-ratio: 4 / 3;
+}
+.gallery-item--left2 {
+  grid-area: left2;
+  aspect-ratio: 4 / 3;
+}
+.gallery-item--tall {
+  grid-area: tall;
+  height: 100%;
+  min-height: 100%;
+}
+.gallery-item--left3 {
+  grid-area: left3;
+  aspect-ratio: 4 / 3;
+}
+.gallery-item--right3 {
+  grid-area: right3;
+  aspect-ratio: 4 / 3;
+}
+.gallery-item--bottom {
+  grid-area: bottom;
+  aspect-ratio: 16 / 9;
+}
+
+/* Photo framing optimizations */
+.gallery-item--top .gallery-img { object-position: center 30%; }
+.gallery-item--left1 .gallery-img { object-position: center center; }
+.gallery-item--left2 .gallery-img { object-position: center 25%; }
+.gallery-item--tall .gallery-img { object-position: center center; }
+.gallery-item--left3 .gallery-img { object-position: center 30%; }
+.gallery-item--right3 .gallery-img { object-position: center 25%; }
+.gallery-item--bottom .gallery-img { object-position: center center; }
 
 .gallery-img {
   width: 100%;
