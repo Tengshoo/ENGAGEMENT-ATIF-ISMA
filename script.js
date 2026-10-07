@@ -1431,8 +1431,6 @@ const translations = {
     dneTitle: "We said DO NOT CLICK.",
     dneP2: "We’re genuinely happy you clicked. Thanks for being curious enough to be part of our little story. 🤍✨",
     dneClose: "See you there! Can’t wait to celebrate with you. 🫶✨",
-    footerMadeWith: "Made with ❤️ & a lot of wedding planning stress.",
-    footerTiny: "Your presence > presents. Always.",
     footerRights: "All rights reserved (to get engaged).",
     musicPlay: "PLAY",
     musicPlaying: "NOW PLAYING"
@@ -1560,8 +1558,6 @@ const translations = {
     dneTitle: "Dah kata JANGAN KLIK.",
     dneP2: "Kami gembira sangat korang klik. Terima kasih kerana sudi jadi sebahagian daripada kisah kami. 🤍✨",
     dneClose: "Jumpa di sana! Tak sabar nak raikan bersama korang. 🫶✨",
-    footerMadeWith: "Dicipta dengan ❤️ & banyak stress perancangan majlis.",
-    footerTiny: "Kehadiran anda adalah hadiah terindah. Sentiasa.",
     footerRights: "Hak cipta terpelihara (untuk bertunang).",
     musicPlay: "PUTAR",
     musicPlaying: "DIMAINKAN"
