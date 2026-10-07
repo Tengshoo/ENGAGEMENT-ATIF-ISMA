@@ -1328,9 +1328,9 @@ const translations = {
     storyHeading: "HOW DID WE GET HERE?",
     storySub: "A completely unhinged timeline of two people in denial.",
     storyTag1: "THE FIRST MEET",
-    storyText1: "The universe decided to be sneaky. Neither of us saw it coming. Classic origin story, honestly.",
+    storyText1: "If you know MokNab Pantai Dalam, then you know the drill.",
     storyTag2: "THE FIRST DATE",
-    storyText2: "Was it a date? Was it hanging out? We both knew. We both pretended we didn't.",
+    storyText2: "It was pasta hype season. Great pasta, lurve the coffee & superb tiramisu. Shout-out to Timothy Cafe for the warm hospitality.",
     storyTag3: "THE \"OH NO, I LIKE YOU\" ERA",
     storyText3: "Panic. Butterflies. Overthinking. Typing and deleting texts. You know the drill.",
     storyTag4: "THE OFFICIAL ERA",
@@ -1457,9 +1457,9 @@ const translations = {
     storyHeading: "BAGAIMANA KITA DI SINI?",
     storySub: "Garis masa perjalanan dua insan yang dulunya saling menafikan.",
     storyTag1: "PERTEMUAN PERTAMA",
-    storyText1: "Takdir memang suka buat kejutan. Masing-masing tak sangka. Cerita klasik, kan?",
+    storyText1: "Kalau korang tahu MokNab Pantai Dalam, faham-faham je lah kisahnya.",
     storyTag2: "JANJI TEMU PERTAMA",
-    storyText2: "Date ke lepak biasa? Dua-dua tahu. Tapi dua-dua buat-buat tak tahu.",
+    storyText2: "Masa ni tengah musim pasta hype. Pasta padu, lurve kopi & tiramisu memang superb. Shout-out kepada Timothy Cafe atas layanan yang mesra.",
     storyTag3: "ZAMAN \"ALAMAK, TERSUKA AWAK\"",
     storyText3: "Panik. Berdebar. Fikir bukan-bukan. Taip dan padam mesej. Faham-faham je lah.",
     storyTag4: "ZAMAN RASMI BERSAMA",
@@ -1572,14 +1572,14 @@ let currentLang = "en";
 try {
   const saved = localStorage.getItem("wedding_lang");
   if (saved === "bm" || saved === "en") currentLang = saved;
-} catch (e) {}
+} catch (e) { }
 
 function setLanguage(lang) {
   if (lang !== "en" && lang !== "bm") lang = "en";
   currentLang = lang;
   try {
     localStorage.setItem("wedding_lang", lang);
-  } catch (e) {}
+  } catch (e) { }
 
   document.documentElement.lang = lang === "bm" ? "ms" : "en";
   document.title = lang === "bm"
