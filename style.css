@@ -1520,6 +1520,13 @@ input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; marg
   margin-bottom: 0.5rem;
 }
 .timeline-text { font-size: 0.92rem; color: var(--text-muted); line-height: 1.5; }
+.timeline-ps {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--text-light);
+  margin-top: 0.35rem;
+}
 .timeline-sticker {
   position: absolute;
   top: -12px; right: -8px;
