@@ -1800,8 +1800,6 @@ input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; marg
   height: 52px;
   width: auto;
   object-fit: contain;
-  mix-blend-mode: multiply;
-  clip-path: inset(0 0 7% 0);
   transition: transform var(--dur) var(--ease);
 }
 .detail-card:hover .dresscode-detail-img {
