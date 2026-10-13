@@ -1309,7 +1309,7 @@ function initSmoothScroll() {
    ============================================================ */
 const translations = {
   en: {
-    navHome: "HOME",
+    navHome: "INVITATION",
     navStory: "STORY",
     navDetails: "DETAILS",
     navProgramme: "PROGRAMME",
@@ -1430,7 +1430,7 @@ const translations = {
     musicPlaying: "NOW PLAYING"
   },
   bm: {
-    navHome: "UTAMA",
+    navHome: "JEMPUTAN",
     navStory: "KISAH KAMI",
     navDetails: "INFO",
     navProgramme: "ATUR CARA",
