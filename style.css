@@ -3132,9 +3132,11 @@ input[type="number"]::-webkit-outer-spin-button {
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto 1.5rem;
   color: var(--accent);
-  margin-bottom: 1.5rem;
 }
 
 .footer-note {

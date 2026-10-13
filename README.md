@@ -56,7 +56,7 @@ const weddingConfig = {
   musicTitle:  "Bernaung",
   musicArtist: "Feby Putri",
   spotifyUrl:  "https://open.spotify.com/track/16Q9MOCDYgrgjEHx6Hx2rv",
-  hashtag:     "#AtifIsmaForever",
+  hashtag:     "Di antara banyak cerita, semoga kisah kita menjadi cerita yang terus berjalan.",
   dressCode:   "Traditional Outfit",
 };
 ```
@@ -202,4 +202,4 @@ Key styling tokens in [`style.css`](style.css):
 ## 💍 Atif & Isma
 
 **26 December 2026 · ONETWO KL**  
-*#AtifIsmaForever*
+*Di antara banyak cerita, semoga kisah kita menjadi cerita yang terus berjalan.*

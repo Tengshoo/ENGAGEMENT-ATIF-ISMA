@@ -26,7 +26,7 @@ const weddingConfig = {
   musicArtist: "Feby Putri",
   spotifyUrl: "https://open.spotify.com/track/16Q9MOCDYgrgjEHx6Hx2rv",
   // EDITABLE: Social hashtag
-  hashtag: "#AtifIsmaForever",
+  hashtag: "Di antara banyak cerita, semoga kisah kita menjadi cerita yang terus berjalan.",
   // EDITABLE: Dress code summary
   dressCode: "Traditional Outfit",
 
